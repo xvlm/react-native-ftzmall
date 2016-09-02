@@ -1,0 +1,800 @@
+body {
+    -webkit-user-select: initial;
+    background-color: #fff;
+}
+body>a {
+    display: none;
+}
+.demo-desc {
+    padding: 10px;
+    font-size: 16px;
+    color: #221713;
+}
+.demo-block {
+    position: relative;
+}
+.demo-block .ui-header, .demo-block .ui-footer, .demo-block .ui-footer1, .demo-block .ui-footer2 {
+    position: absolute;
+}
+.ui-tab-nav {
+    top: 45px;
+}
+.ui-tab-content {
+    margin-top: 0px;
+}
+.demo-block > .ui-list, .demo-block >.ui-form, .demo-block >.ui-tooltips {
+    margin-bottom: 20px;
+}
+.content h3 {
+    padding: 0 15px;
+    line-height: 44px;
+    font-size: 15px;
+}
+.border-list {
+    background-color: #fff;
+}
+.border-list li {
+    width: 100px;
+    margin: 10px auto;
+    -webkit-box-pack: center;
+    text-align: center;
+}
+.ui-btn-group-bottom {
+    bottom: 56px;
+}
+.ui-table {
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+.ui-scroller {
+    width: auto;
+    height: 300px;
+    margin: 20px;
+    padding: 10px;
+    overflow: hidden;
+}
+.ui-scroller li {
+    margin-bottom: 10px;
+}
+.ui-notice {
+    top: 0;
+    z-index: -1;
+    height: 400px;
+}
+.icon-lists li {
+    float: left;
+    height: 100px;
+    width: 103px;
+    text-align: center;
+}
+.icon-lists li i {
+    font-size: 32px;
+    line-height: 44px;
+}
+.icon-lists .ui-icon, .icon-lists [class^="ui-icon-"] {
+    margin: 10px 0;
+    color: #000;
+}
+.code, .fontclass {
+    font-size: 12px;
+}
+.ui-col {
+    padding: 5px;
+    background: #777;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+.ui-flex {
+    border: 1px solid #ddd;
+    min-height: 80px;
+    margin-bottom: 10px;
+}
+.ui-flex-ver {
+    border: 1px solid #ddd;
+    min-height: 80px;
+    margin-bottom: 10px;
+}
+.ui-row-flex-ver {
+    border: 1px solid #ddd;
+    min-height: 100px;
+}
+.test-img {
+    width: 50px;
+    height: 50px;
+    background: #777;
+}
+.ui-border-bot-img {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.fontclass-tab {
+    font-size: 12px;
+}
+.ui-border-l-3r {
+    border-left: 3px solid #f6447e;
+}
+.width100 {
+    width: 100% !important;
+}
+.border-radius-0 {
+    border-radius: 0 !important;
+}
+.box-align-start {
+    -webkit-box-align: start !important;
+}
+.box-align-end {
+    -webkit-box-align: end !important;
+}
+.padding-0 {
+    padding: 0 !important;
+}
+.padding-t12 {
+    padding: 12px 0 0 0 !important;
+}
+.padding-t7 {
+    padding: 7px 0 0 0 !important;
+}
+.padding-rl1 {
+    padding: 0 1em !important;
+}
+.padding-1 {
+    padding: 1em !important;
+}
+.pad-5 {
+    padding-left: 5px;
+}
+.ui-col-95, .ui-col-dp {
+    width: 95%;
+    margin: 0 0 15px 2.5%;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0px solid #ddd;
+}
+.ui-col-95 span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+}
+.hg-160 {
+    height: 160px;
+}
+.hg-86 {
+    height: 86px;
+}
+.hg-25 {
+    height: 25em;
+}
+/*价格板块浮动样式*/
+.row-1 {
+    margin: .5em 0 0 0.6em;
+}
+.row-2 {
+    margin: 20px 0 3px 0;
+}
+.row-3 {
+    font-size: 1em;
+    margin: .1em 0 0 .5em;
+    line-height: 1.4em;
+}
+.price-highlight {
+    font-size: 1.3em;
+    color: #ed145b;
+}
+.price-h {
+    padding: 1em 0 0 0;
+    font-size: 0.6em;
+    color: rgb(60, 60, 60);
+    font-weight: 400;
+    text-decoration: line-through;
+}
+/*头部LOGO样式*/
+.logo-head, .unlogo-head, .inner-head {
+    float: left;
+    position: relative;
+}
+.logo-head, .unlogo-head {
+    border-bottom: 1px solid #242424;
+}
+.logo-head i, .unlogo-head i, .inner-head i {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.logo-head i, .inner-head i {
+    width: 45px;
+}
+.unlogo-head i {
+    padding: 0 15px;
+    color: #333;
+}
+.logo-head i, .unlogo-head i {
+    font-size: 1.2em;
+}
+.inner-head i {
+    font-size: 2em;
+}
+.color-221713 {
+    color: #221713 !important;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.float-right1 {
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 10px;
+    font-size: 1.5em !important;
+}
+.logo-head, .unlogo-head {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+.logo-head {
+    background: transparent url(../images/logo-1.png) center center no-repeat;
+}
+.inner-head {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+.gray-bg-box {
+    display: block;
+    width: 100%;
+    background: #e5e5e5;
+    padding-top: 6px;
+}
+.text-align1 {
+    display: block;
+    text-align: center;
+    margin: 35px auto 15px auto;
+    height: 1.2em;
+    line-height: 1.2em;
+    font-size: 1em;
+    color: #000;
+}
+.text-align2 {
+    display: block;
+    text-align: center;
+    width: 4em;
+    margin: 0 auto;
+    padding: 8px 50px;
+    border: 1px solid #333;
+    background-color: #fff;
+    height: 1.2em;
+    line-height: 1.2em;
+    font-size: 1em;
+    color: #000;
+}
+.text-align2:hover {
+    background-color: #9d9d9d;
+}
+.mig-fourpic {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    background: #fff;
+    border: 1px solid #dadada;
+}
+.gray-bg-box2 {
+    display: block;
+    width: 100%;
+    background: #e5e5e5;
+    height: 190px;
+    padding-top: 8px;
+}
+.mig-fourpic2 {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    height: 180px;
+    background: #fff;
+    border: 1px solid #dadada;
+}
+.gray-bg-box3 {
+    display: block;
+    width: 100%;
+    background: #fff;
+    height: 115px;
+    padding-top: 8px;
+}
+.mig-fourpic3 {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 105px;
+    line-height: 30px;
+    background: #fff;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+}
+.row-price1 {
+    margin: .5em 0 0 .5em;
+    float: left;
+}
+.row-price2 {
+    margin: .5em .5em 0 0;
+    float: right;
+    text-align: right;
+}
+.zj-1 {
+    padding: 2px 10px;
+    display: block;
+    float: left;
+    background-color: #ed145b;
+}
+.by-1 {
+    padding: 2px 10px;
+    display: block;
+    margin-left: 2px;
+    float: left;
+    background-color: #e66802;
+}
+.price-ms {
+    display: block;
+    color: #fff;
+    font-size: 1em;
+    height: 24px;
+    line-height: 24px;
+}
+.sp-no1 {
+    font-size: .8em;
+    color: #999;
+}
+.i-size1 {
+    font-size: 1.2em;
+}
+.i-size2 {
+    font-size: 2em;
+}
+.i-size10 {
+    font-size: 10px;
+}
+.i-size24 {
+    font-size: 24px;
+    color: #f6447e;
+}
+.i-size12b {
+    font-size: 12px;
+    color: #000;
+}
+.i-size20b {
+    display: block;
+    height: 20px;
+    padding-top: 8px;
+    font-size: 20px;
+    color: #000;
+}
+.i-size10 {
+    font-size: 1em;
+    font-variant: small-caps;
+    color: #484848;
+}
+.margin-bot10 {
+    display: block;
+    margin-bottom: 10px;
+}
+.margin-lr10 {
+    display: block;
+    margin: auto 10px;
+}
+.margin-lr5 {
+    display: block;
+    margin: auto 5px;
+}
+.margin-tb10 {
+    display: block;
+    margin: 10px auto;
+}
+.margin-t45 {
+    display: block;
+    margin: 45px 0 0 0;
+}
+.top45 {
+    top: 45px;
+}
+.top-m-45 {
+    margin-top: 45px;
+}
+.float-gb1 {
+    display: block;
+    position: absolute;
+    float: left;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 50;
+}
+.float-gb1 > span {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+}
+.bt-head {
+    display: block;
+    float: left;
+    margin-left: 50px;
+    width: 70%;
+    height: 45px;
+    line-height: 45px;
+}
+.black-rounder {
+    display: block;
+    height: 1.6em;
+    line-height: 1.6em;
+    color: #FFF;
+    padding: 0 .8em;
+    background-color: #000;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.gray-line-s {
+    display: block;
+    width: 1px;
+    height: 300px;
+    background-color: #666;
+    position: absolute;
+    left: 10%;
+    z-index: -1;
+}
+.gray-tb {
+    position: relative;
+    border-top: 1em solid #fff;
+    border-bottom: 1em solid #e5e5e5;
+}
+.gray-b15 {
+    display: block;
+    width: 100% !important;
+    height: 1em;
+    background-color: #e5e5e5;
+}
+.center-black {
+    display: block;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+}
+.center-black2 {
+    display: block;
+    width: 100%;
+    height: 1em;
+    font-size: 1.2em;
+    margin: -13px 0 10px 0;
+    text-align: center;
+}
+/*行距居中调整*/
+.hl-set {
+    line-height: 4em;
+}
+.hl-set1 {
+    line-height: 2em;
+}
+.hl-set2 {
+    line-height: 3em;
+}
+.hl-set3 {
+    line-height: 3.6em;
+}
+.hl-set4 {
+    line-height: 1em;
+}
+.hl-set5 {
+    line-height: 2.5em;
+}
+.hl-set6 {
+    line-height: 6em;
+}
+.hl-set10 {
+    line-height: 10em;
+}
+.margin-t1 {
+    margin-top: 1.6em !important;
+}
+.margin-l10 {
+    margin: 0 0 0 10px;
+}
+/*计数组件*/
+.item-editer {
+    padding: 0px 30px 0 30px;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+    float: left;
+}
+.item-restrict {
+    display: block;
+    border: 1px solid #ffc0cb;
+    background-color: #ffe7f1;
+    color: #e81a62;
+    font-weight: normal;
+    font-style: normal;
+    width: 72px;
+}
+.item-restrict-short {
+    display: block;
+    color: #e81a62;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 22px;
+    width: 72px;
+}
+.cart-title-quantity {
+    width: 100px;
+    float: left;
+    text-align: center;
+}
+.numinput {
+    position: relative;
+    display: block;
+    float: left;
+    width: 84px;
+    margin-top: 8px;
+}
+.numinput input {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 22px;
+    line-height: 20px;
+    margin-left: 51px;
+    text-align: center;
+    border-top: solid 1px #ffc0cb;
+    border-bottom: solid 1px #ffc0cb;
+}
+.substract {
+    top: 0px;
+    left: 30px;
+}
+.plus {
+    top: 0px;
+    left: 81px;
+}
+.substract, .plus {
+    display: block;
+    width: 22px;
+    height: 22px;
+    line-height: 22x;
+    position: absolute;
+    cursor: pointer;
+    float: left;
+}
+/*弹出按钮组件*/
+.jump-button {
+    color: #999 !important;
+}
+.button-s {
+    display: block;
+    padding: 5px;
+}
+.tb-iconfont {
+    display: block;
+    _display: inline;
+    float: left;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0;
+    vertical-align: top;
+    text-align: center;
+    background-color: #fff;
+    overflow: hidden;
+}
+.tb-left {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.tb-right {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.tb-stock {
+    display: block;
+    position: relative;
+    float: right;
+    padding: 8px 0;
+}
+.tb-stock1 {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 2.6em;
+}
+.tb-stock input, .tb-stock1 input {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 48px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ccc;
+    outline: 0;
+    background: #FFF;
+    ime-mode: disabled;
+}
+.fl-list {
+    display: block;
+    float: left;
+    margin-right: 6em;
+}
+.tb-h28 {
+    height: 28px !important;
+    line-height: 28px !important;
+}
+/*购物车样式*/
+.ui-list-info {
+    position: relative;
+}
+.price-s1 {
+    display: block;
+    font-size: .8em;
+    color: #999;
+}
+.price-s2 {
+    font-size: .5em;
+    color: #999;
+}
+.price-s3 {
+    font-size: .2em;
+    color: #999;
+}
+.price-s4 {
+    font-size: .2em;
+}
+.red-box {
+    display: block;
+    float: left;
+    width: 22px;
+    height: 15px;
+    line-height: 15px;
+    margin: 2px 5px 2px 0;
+    font-size: .8em;
+    text-align: center;
+    color: #fff;
+    background-color: #F39;
+}
+.price-s {
+    display: block;
+    width: 8em;
+    line-height: 2em;
+    font-size: .8em;
+    color: #000;
+}
+.price-js {
+    display: block;
+    width: 100%;
+    line-height: 2em;
+    font-size: .8em;
+    color: #000;
+}
+.gray-bgbox1 {
+    display: block;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #d3d3d3;
+    background-color: #FFF;
+    background-image: url(../images/graybob-bg-1.png);
+    background-repeat: repeat-x;
+    background-position: center center;
+}
+.info-h5 {
+    display: block;
+    position: absolute;
+    height: 1em;
+    line-height: 1em;
+}
+.ui-list1, .ui-list2 {
+    background-color: #fff;
+    width: 100%;
+}
+.ui-list1 > li {
+    position: relative;
+    padding-left: 15px;
+    display: -webkit-box;
+}
+.ui-list2 > dl {
+    position: relative;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.info-list1 {
+    display: block;
+    padding-left: 15px;
+}
+.bg-red {
+    background-color: #e3e3e3 !important;
+}
+.color-red {
+    color: #fe6397 !important;
+}
+/*结算中心*/
+.center-text {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}rl
+.float-list {
+    display: block;
+    position: relative;
+    float: left;
+    padding-right: 15px;
+}
+.font-1 {
+    font-size: 1em !important;
+}
+.block-1 {
+    display: block;
+}
+.ui-col-logbut {
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+}
+/*login*/
+.verifycode-image {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    top: 2px;
+    right: 12px;
+}
+.forget-password {
+    padding: 10px 0 30px 0;
+    margin: 6px auto;
+    width: 94%;
+    height: 28px;
+    line-height: 28px;
+}
+.m-page {
+    background: url(../images/bg/2.jpg) no-repeat 100% 100%;
+}
+.verifycode-1 {
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.getValiCode {
+    color: #fe6397 !important;
+    border: 1px solid #fe6397 !important;
+    background: url(../images/bg/tmbg-1.png) repeat center center !important;
+    padding: 6px 0 6px 0;
+}
+.search-none{background: url(../images/search-none.png) no-repeat;position: absolute;width: 50%;height: 50%;top:15%;left: 25%;background-size:contain;}
+
