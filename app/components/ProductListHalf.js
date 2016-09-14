@@ -26,7 +26,7 @@ let { width, height } = Dimensions.get('window');
 //                     return bannerView;
 //                 }) }
 
-export default class ProuctList extends Component {
+export default class ProductListHalf extends Component {
     render() {
         let id = 0;
         return (
@@ -38,7 +38,8 @@ export default class ProuctList extends Component {
                     const bannerView = (
                         <View
                             key={id}
-                            style={{ flex: 1 }}
+                            style={{ flex: 1 ,width: width/2}}
+
                             >
                             {this.renderItem(article) }
                         </View>);
@@ -101,7 +102,7 @@ const returnSize = 45;
 const styles = StyleSheet.create({
     containerItem: {
         flex: 1,
-        width: width,
+        width: width/2,
         
         alignSelf: 'center'
     },

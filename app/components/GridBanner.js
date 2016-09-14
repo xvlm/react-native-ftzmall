@@ -5,7 +5,8 @@ import {
     View,
     TouchableOpacity,
     Platform,
-    Image
+    Image,
+    PixelRatio
 } from 'react-native';
 
 import WebContainer from "../containers/WebContainer";
@@ -29,7 +30,8 @@ export default class GridBanner extends Component {
     render() {
         let id = 0;
         return (
-            <View>
+            //4 pic 360*180
+            <View style={styles.gridBannerContainer}>
                 <View style={styles.banner}>
                     {this.renderItem(this.props.dataSource[0]) }
                     {this.renderItem(this.props.dataSource[1]) }
@@ -58,13 +60,13 @@ export default class GridBanner extends Component {
             <TouchableOpacity
                 onPress={() => this.goUrl(article.href) }
                 >
-                <View style={styles.containerItem}>
-                    <Image
-                        style={styles.base}
-                        resizeMode={Image.resizeMode.contain}
-                        source={{ uri: article.imageUrl }}
-                        />
-                </View>
+
+                <Image
+                    style={styles.base}
+                    resizeMode={Image.resizeMode.strech}
+                    source={{ uri: article.imageUrl }}
+                    />
+
             </TouchableOpacity>
         );
     }
@@ -72,20 +74,22 @@ export default class GridBanner extends Component {
 
 const returnSize = 45;
 const styles = StyleSheet.create({
-    containerItem: {
-        flex: 1,
-
+    gridBannerContainer: {
+        
         alignItems: 'center',
         justifyContent: 'center',
-       
+
     },
     banner: {
         flexDirection: 'row',
-        width: width,
         backgroundColor: '#FFFFFF',
+
     },
     base: {
         width: width / 2,
-        height: width / 2,
+        height: 180*(width/2*PixelRatio.get())/(360*PixelRatio.get()),
+        borderWidth: 1,
+        
+        borderColor: '#f0f0f0',
     }
 });

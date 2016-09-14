@@ -5,7 +5,8 @@ import {
     View,
     TouchableOpacity,
     ListView,
-    Image
+    Image,
+    PixelRatio
 } from 'react-native';
 
 let { width, height } = Dimensions.get('window');
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     containerItem: {
         flex: 1,
         width: width,
-        height: 300,
+        height: 300*(width*PixelRatio.get())/(640*PixelRatio.get()),
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,

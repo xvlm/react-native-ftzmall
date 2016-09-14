@@ -50,7 +50,6 @@ export function fetchImageText(isRefreshing, loading, typeId, isLoadMore, page =
     // return request(`${WEXIN_ARTICLE_LIST}?typeId=${typeId}&page=${page}`, 'get')
     return request(`${urls.ad_imagetext}${typeId}`, 'get')
       .then((articleList) => {
-        console.log(articleList,typeId);
         // dispatch(receiveArticleList(articleList.showapi_res_body.pagebean.contentlist, typeId));
         dispatch(receiveArticleList(articleList.items, typeId));
         const errorMessage = articleList.showapi_res_error;
@@ -95,7 +94,6 @@ export function fetchProduct(isRefreshing, loading, typeId, isLoadMore, page = 1
     return request(`${urls.ad_product}${typeId}`, 'get')
     
       .then((articleList) => {
-        console.log(articleList,typeId);
         // dispatch(receiveArticleList(articleList.showapi_res_body.pagebean.contentlist, typeId));
         dispatch(receiveArticleList(articleList.items, typeId));
         const errorMessage = articleList.showapi_res_error;

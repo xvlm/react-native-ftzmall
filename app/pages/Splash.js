@@ -20,6 +20,7 @@ import {
   Dimensions,
   Image,
   View,
+  PixelRatio,
 } from 'react-native';
 
 import MainContainer from '../containers/MainContainer';
@@ -47,7 +48,7 @@ class Splash extends React.Component {
     return (
       <View style={{flex:1,justifyContent: 'center', alignItems: 'center'}}>
       <Image
-        style={{ width: 387, height: 229 ,alignSelf: 'center',}}
+        style={{width:maxWidth-20,height: 229*(maxWidth*PixelRatio.get())/(387*PixelRatio.get())-20,alignSelf: 'center',}}
         source={splashImg}
       />
       </View>

@@ -31,18 +31,20 @@ import {
   Platform,
   View,
   WebView,
-  DeviceEventEmitter
+  DeviceEventEmitter,
 } from 'react-native';
 
 import TabNavigator from 'react-native-tab-navigator';
 import DrawerLayout from 'react-native-drawer-layout';
 import TimeAgo from 'react-native-timeago';
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import ScrollableTabView, { DefaultTabBar , ScrollableTabBar, }  from 'react-native-scrollable-tab-view';
 import * as mainAction from '../actions/main';
 import LoadingView from '../components/LoadingView';
 import GridBanner from '../components/GridBanner';
 import CarouselBanner from '../components/CarouselBanner';
 import ProuctList from '../components/ProuctList';
+import TabPage from './TabPage';
+import { AdMobInterstitial, AdMobBanner } from 'react-native-admob';
 
 // import mainingToolbar from '../components/mainingToolbar';
 // import About from '../pages/About';
@@ -81,6 +83,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedTopTab: 0,
       selectedTab: "home",
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
@@ -252,7 +255,6 @@ class Main extends React.Component {
     // console.log(adid,main.articleList[adid]);
     var isEmpty = main.articleList[180101] === undefined || main.articleList[180101].length === 0;
     // });
-    console.log(main.articleList, isEmpty);
     if (isEmpty) {
       return (
         <ScrollView
@@ -347,9 +349,14 @@ class Main extends React.Component {
 
   render() {
     const { main, navigator } = this.props;
+   let tabBarHeight=50;
+   let tabId =1;
     return (
       <View style={styles.container}>
-        <TabNavigator tabBarStyle={{ height: 50,backgroundColor:"#FFFFFF" }} >
+        <TabNavigator  
+        tabBarStyle={{height:tabBarHeight,backgroundColor:"#FFFFFF",width:width,overflow: 'hidden' }} 
+        sceneStyle={{ paddingBottom: tabBarHeight*2 }}
+        >
           <TabNavigator.Item
             selected={this.state.selectedTab === 'home'}
             title="首页"
@@ -357,64 +364,38 @@ class Main extends React.Component {
             renderSelectedIcon={() => <Image style={styles.img} source={require('../img/tab_home_selected.png') } />}
            
             onPress={() => this.setState({ selectedTab: 'home' }) }>
-            <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
+            <View style={{ flex: 1,height:height-100, backgroundColor: '#fff', justifyContent: 'center' }}>
               <ScrollableTabView
-                renderTabBar={() =>
-                  <DefaultTabBar
-                    underlineHeight={2}
-                    tabStyle={{ paddingBottom: 0 }}
-                    textStyle={{ fontSize: 16 }}
-                    />
-                }
+                renderTabBar={() =><ScrollableTabBar/>}
                 tabBarBackgroundColor="#fcfcfc"
                 tabBarUnderlineColor="#3e9ce9"
                 tabBarActiveTextColor="#3e9ce9"
                 tabBarInactiveTextColor="#aaaaaa"
-
+                onChangeTab={(obj) => {
+                    this.setState({ selectedTopTab: obj.i }) 
+                  }
+                }
                 >
                 <View
-                  key={0}
-                  tabLabel={CATEGORIES[0]}
+                  tabLabel={"首页"}
                   style={{ flex: 1 }}
                   >
-                  {this.renderContent() }
+                  {this.state.selectedTopTab === 0?this.renderContent():null }
                 </View>
-
-                <View
-                  key={1}
-                  tabLabel={CATEGORIES[1]}
+                {CATEGORIES.map((CATEGORIE)=>{
+                  const tabView = (
+                    <View
+                     key={tabId}
+                  tabLabel={CATEGORIE}
                   style={{ flex: 1 }}
-                  >
-                  <Text>{CATEGORIES[1]}</Text>
-                </View>
-                <View
-                  key={2}
-                  tabLabel={CATEGORIES[2]}
-                  style={{ flex: 1 }}
-                  >
-                  <Text>{CATEGORIES[2]}</Text>
-                </View>
-                <View
-                  key={3}
-                  tabLabel={CATEGORIES[3]}
-                  style={{ flex: 1 }}
-                  >
-                  <Text>{CATEGORIES[3]}</Text>
-                </View>
-                <View
-                  key={4}
-                  tabLabel={CATEGORIES[4]}
-                  style={{ flex: 1 }}
-                  >
-                  <Text>{CATEGORIES[4]}</Text>
-                </View>
-                <View
-                  key={5}
-                  tabLabel={CATEGORIES[5]}
-                  style={{ flex: 1 }}
-                  >
-                  <Text>{CATEGORIES[5]}</Text>
-                </View>
+                    >
+                      {this.state.selectedTopTab === tabId?<TabPage CATEGORIE={CATEGORIE} {...this.props}/>:null }
+                    </View>
+                  );
+                  tabId++;
+                  return tabView;
+                })}
+               
               </ScrollableTabView>
             </View>
           </TabNavigator.Item>
@@ -425,7 +406,13 @@ class Main extends React.Component {
             renderIcon={() => <Image style={styles.img} source={require('../img/tab_shopping_cart_normal.png') } />}
             renderSelectedIcon={() => <Image style={styles.img} source={require('../img/tab_shopping_cart_selected.png') } />}
             onPress={() => this.setState({ selectedTab: 'cart' }) }>
-            <View><Text>我是第额当然个选项卡，直接书写出的视图!</Text></View>
+            <WebView
+              style={{ flex: 1 ,height:height-110}}
+              source={{
+            uri: 'http://m.ftzmall.com/cart.html',
+            method: 'GET',
+          }}
+            />
           </TabNavigator.Item>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'profile'}
@@ -433,19 +420,31 @@ class Main extends React.Component {
             renderIcon={() => <Image style={styles.img} source={require('../img/tab_my_center_normal.png') } />}
             renderSelectedIcon={() => <Image style={styles.img} source={require('../img/tab_my_center_selected.png') } />}
             onPress={() => this.setState({ selectedTab: 'profile' }) }>
-            <View><Text>我是第额当然个选项卡，直接书写出的视图!</Text></View>
+             <WebView
+              style={{ flex: 1 ,height:height-110}}
+              source={{
+            uri: 'http://m.ftzmall.com/user/index.html',
+            method: 'GET',
+          }}
+            />
           </TabNavigator.Item>
         </TabNavigator>
+
+        <AdMobBanner
+          bannerSize="smartBannerPortrait"
+          testDeviceID="EMULATOR"
+          adUnitID="ca-app-pub-1114976574475183/6436382287"
+          />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: {    
     flex: 1,
-    flexDirection: 'column'
-  },
+    flexDirection: 'column', 
+   },
   containerItem: {
     flexDirection: 'row',
     justifyContent: 'center',
